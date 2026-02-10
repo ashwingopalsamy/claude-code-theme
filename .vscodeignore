@@ -1,0 +1,11 @@
+src/**
+scripts/**
+docs/**
+test/**
+node_modules/**
+.gitignore
+tsconfig.json
+build.ts
+pnpm-lock.yaml
+assets/screenshot-*.svg
+*.vsix

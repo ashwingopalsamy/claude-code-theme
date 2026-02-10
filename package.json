@@ -1,0 +1,91 @@
+{
+  "name": "claude-code-theme",
+  "displayName": "Claude Code Theme",
+  "description": "Claude-aligned code theme system for VS Code, designed for clarity, endurance, and semantic meaning.",
+  "version": "0.1.0",
+  "publisher": "ashwingopalsamy",
+  "author": {
+    "name": "Ashwin Gopalsamy",
+    "url": "https://github.com/ashwingopalsamy"
+  },
+  "homepage": "https://github.com/ashwingopalsamy/claude-code-theme#readme",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "vscode": "^1.80.0",
+    "node": ">=20.0.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "claude",
+    "anthropic",
+    "light-theme",
+    "dark-theme",
+    "syntax-highlighting",
+    "accessibility",
+    "developer-ergonomics"
+  ],
+  "icon": "logo.png",
+  "galleryBanner": {
+    "color": "#C96442",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ashwingopalsamy/claude-code-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ashwingopalsamy/claude-code-theme/issues"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Claude Code Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/claude-code-dark.json"
+      },
+      {
+        "label": "Claude Code Dark Italic",
+        "uiTheme": "vs-dark",
+        "path": "./themes/claude-code-dark-italic.json"
+      },
+      {
+        "label": "Claude Code Dark High Contrast",
+        "uiTheme": "hc-black",
+        "path": "./themes/claude-code-dark-high-contrast.json"
+      },
+      {
+        "label": "Claude Code Light",
+        "uiTheme": "vs",
+        "path": "./themes/claude-code-light.json"
+      },
+      {
+        "label": "Claude Code Light Italic",
+        "uiTheme": "vs",
+        "path": "./themes/claude-code-light-italic.json"
+      },
+      {
+        "label": "Claude Code Light High Contrast",
+        "uiTheme": "hc-light",
+        "path": "./themes/claude-code-light-high-contrast.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "tsx build.ts",
+    "contrast": "tsx scripts/contrast-report.ts",
+    "package": "vsce package",
+    "compile": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "@vscode/vsce": "^2.22.0",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.0"
+  }
+}
