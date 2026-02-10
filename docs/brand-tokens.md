@@ -5,13 +5,8 @@ This file defines the canonical Claude/Anthropic token inputs used by the theme 
 ## Sources
 
 Official references used:
-- Anthropic `brand-guidelines` skill text (main/accent/background/text anchors):
-  - https://raw.githubusercontent.com/anthropics/skills/main/skills/brand-guidelines/SKILL.md
-- Claude design guideline CSS variables (light/dark background, text, status, link colors):
-  - https://docs.anthropic.com/en/docs/claude-code/design-guidelines
-- Anthropic visual identity case study reference:
-  - https://geist.co/work/anthropic
-- Local brand palette PDF provided by maintainer (`/Users/ashwin/Downloads/Color.pdf`, extracted on February 10, 2026):
+- Anthropic `brand-guidelines` [skill text](https://raw.githubusercontent.com/anthropics/skills/main/skills/brand-guidelines/SKILL.md) (main/accent/background/text anchors).
+- Anthropic [visual identity case study reference](https://geist.co/work/anthropic):
   - primary swatches: `#D97757`, `#CC785C`, `#D4A27F`, `#EBDBBC`
   - highlight swatches: `#9B87F5`, `#207FDE`, `#61AAF2`
   - neutral swatches: `#191919`, `#262625`, `#40403E`, `#666663`, `#91918D`, `#BFBFBA`, `#E5E4DF`, `#F0F0EB`, `#FAFAF7`

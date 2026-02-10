@@ -1,166 +1,123 @@
 # Claude Code Theme
 
-A code theme system for VS Code, designed for clarity, endurance, and semantic meaning.
+[![CI](https://github.com/ashwingopalsamy/claude-code-theme/actions/workflows/ci.yml/badge.svg)](https://github.com/ashwingopalsamy/claude-code-theme/actions/workflows/ci.yml)
 
-Maintainer: Ashwin Gopalsamy  
-Canonical repository: https://github.com/ashwingopalsamy/claude-code-theme
+Independent VS Code theme extension inspired by Claude/Anthropic visual language, with semantic token discipline, full workbench coverage, and WCAG-oriented validation.
 
-## Inspiration and Credit
+- Maintainer: Ashwin Gopalsamy
+- Repository: https://github.com/ashwingopalsamy/claude-code-theme
 
-This project is respectfully inspired by [claude-vscode-theme](https://github.com/alvinunreal/awesome-claude/tree/main/claude-vscode-theme).
+## Theme Set
 
-What changed here:
-- formalized Claude/Anthropic brand tokens as first-class inputs
-- added light themes built from first principles (not dark inversion)
-- rebuilt syntax and semantic mappings around token roles
-- expanded UI parity across dark/light/high-contrast variants
+This extension ships four variants:
+
+1. Claude Code Dark
+2. Claude Code Dark High Contrast
+3. Claude Code Light
+4. Claude Code Light High Contrast
+
+## Design Goals
+
+- semantic meaning over decorative color noise
+- stable role hierarchy across languages
+- warm, low-glare backgrounds for long sessions
+- explicit accessibility checks in development/CI
+- independent implementation, not a copied fork
 
 This project is independent and not affiliated with Anthropic.
 
-## Theme Lineup
+## Color System
 
-| Theme | Type | Notes |
-| --- | --- | --- |
-| Claude Code Dark | Dark | Baseline dark theme for daily use |
-| Claude Code Dark Italic | Dark | Same palette, selective italic emphasis |
-| Claude Code Dark High Contrast | Dark | Higher separation for low-visibility setups |
-| Claude Code Light | Light | Warm paper-like light theme |
-| Claude Code Light Italic | Light | Light theme with selective italics |
-| Claude Code Light High Contrast | Light | Stronger contrast while staying warm |
+The palette is token-first and documented in `/docs/brand-tokens.md`.
 
-## Design Philosophy
+Reference inputs include:
 
-- Semantic meaning over decoration
-- Hierarchy through controlled contrast, not saturation noise
-- Long-session comfort over novelty
-- Consistent token roles across languages
-- UI should support code, not compete with it
+- Anthropic brand-guidelines skill:
+  - https://raw.githubusercontent.com/anthropics/skills/main/skills/brand-guidelines/SKILL.md
+- Anthropic identity case study:
+  - https://geist.co/work/anthropic
 
-## Claude Brand Alignment
+## Installation
 
-The palette system is normalized from official Claude/Anthropic-owned references.
-
-Token model:
-- `primary`
-- `secondary`
-- `accent`
-- `neutral`
-- `background`
-- `foreground`
-- `interactive`
-- `error`
-- `warning`
-- `success`
-
-See `/docs/brand-tokens.md` for source links and exact values.
-
-## Dark vs Light Intent
-
-Dark themes:
-- warm low-glare backgrounds
-- restrained accents for semantic differentiation
-- high-contrast variant increases separation without neon color
-
-Light themes:
-- warm paper neutrals (no pure white editor background)
-- reduced saturation except for semantic emphasis
-- comments remain recessed but readable in long daylight sessions
-
-## Accessibility
-
-- WCAG 2.1 AA baseline across core code/text roles
-- AAA targeted for editor foreground where feasible
-- contrast checks are script-validated in CI/local workflows
-
-Run the report:
+### Install from source VSIX
 
 ```bash
-pnpm contrast
+pnpm install --frozen-lockfile
+pnpm build
+pnpm package
+code --install-extension ./claude-code-theme-0.1.0.vsix --force
 ```
 
-Latest local report (`February 10, 2026`):
+### Activate in VS Code
 
-| Theme | Editor text | Comment | Keyword | String |
-| --- | --- | --- | --- | --- |
-| Claude Code Dark | 14.92 | 6.79 | 7.43 | 9.80 |
-| Claude Code Dark High Contrast | 16.98 | 10.02 | 9.81 | 12.85 |
-| Claude Code Light | 16.68 | 6.49 | 4.91 | 4.86 |
-| Claude Code Light High Contrast | 16.61 | 6.24 | 6.36 | 5.92 |
-
-## Language and Token Coverage
-
-Explicitly tuned for:
-- Go
-- TypeScript / JavaScript
-- Python
-- Java
-- Rust
-- HTML / CSS
-- JSON / YAML
-- Markdown
-- SQL
-
-Coverage includes:
-- TextMate scopes
-- semantic tokens
-- semantic modifiers (`readonly`, `deprecated`, `async`, `declaration`, `static`)
-- selective italic usage only in italic variants
-
-## Repository Structure
-
-```text
-.
-├── build.ts
-├── scripts/
-│   └── contrast-report.ts
-├── src/
-│   └── theme/
-│       ├── index.ts
-│       ├── palette.ts
-│       ├── semanticTokens.ts
-│       ├── tokenColors.ts
-│       ├── tokens/
-│       │   └── index.ts
-│       └── uiColors.ts
-├── themes/
-│   ├── claude-code-dark.json
-│   ├── claude-code-dark-italic.json
-│   ├── claude-code-dark-high-contrast.json
-│   ├── claude-code-light.json
-│   ├── claude-code-light-italic.json
-│   └── claude-code-light-high-contrast.json
-└── docs/
-    └── brand-tokens.md
-```
-
-## Screenshot Placeholders
-
-- Dark theme screenshot placeholder: `assets/screenshot-dark-placeholder.svg`
-- Light theme screenshot placeholder: `assets/screenshot-light-placeholder.svg`
+1. Open Command Palette.
+2. Run `Preferences: Color Theme`.
+3. Select one of the `Claude Code ...` variants.
 
 ## Development
 
 ```bash
-pnpm install
-pnpm build
-pnpm compile
-pnpm contrast
+pnpm install --frozen-lockfile
+pnpm check
+pnpm package
 ```
+
+## Accessibility Snapshot
+
+Latest local contrast run (`February 10, 2026`) via `pnpm contrast`:
+
+| Theme | Editor text | Comment | Keyword | String |
+| --- | --- | --- | --- | --- |
+| Claude Code Dark | 14.92 | 8.51 | 8.70 | 12.98 |
+| Claude Code Dark High Contrast | 16.98 | 11.49 | 10.87 | 14.95 |
+| Claude Code Light | 16.68 | 5.45 | 4.92 | 4.69 |
+| Claude Code Light High Contrast | 16.61 | 5.34 | 5.35 | 4.88 |
+
+## Repository Layout
+
+```text
+.
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   ├── workflows/
+│   ├── CODEOWNERS
+│   └── pull_request_template.md
+├── docs/
+│   └── brand-tokens.md
+├── scripts/
+│   └── contrast-report.ts
+├── src/
+│   └── theme/
+├── themes/
+│   ├── claude-code-dark.json
+│   ├── claude-code-dark-high-contrast.json
+│   ├── claude-code-light.json
+│   └── claude-code-light-high-contrast.json
+├── CONTRIBUTING.md
+├── SECURITY.md
+└── SUPPORT.md
+```
+
+## Project Standards
+
+This repository follows an OpenAI/Anthropic-style open-source baseline:
+
+- structured issue templates and PR template
+- CI workflow that validates build, compile, contrast, and packaging
+- explicit contribution and security policy docs
+- reproducible release packaging via `pnpm package`
 
 ## Contributing
 
-1. Open an issue before large theme-direction changes.
-2. Keep changes role-first: token intent before scope patching.
-3. Add or update contrast checks when changing palette values.
-4. Use Conventional Commits.
-5. Keep pull requests focused and reviewable.
+See `/CONTRIBUTING.md`.
 
-## Roadmap
+## Security
 
-- Add snapshot-based visual regression checks for the six bundled themes.
-- Add test fixtures for each explicitly supported language.
-- Publish JetBrains port after token-role parity is validated.
-- Add optional low-contrast mode for projection environments.
+See `/SECURITY.md`.
+
+## Support
+
+See `/SUPPORT.md`.
 
 ## License
 
