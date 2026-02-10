@@ -14,7 +14,7 @@ export function getUiColors(context: ThemeContext): WorkbenchColors {
   const brandSurface = isDark ? '#AE4E30' : brandPrimary;
   const brandSurfaceHover = isDark ? '#9E452F' : '#BF5A39';
   const brandSurfacePressed = isDark ? '#8F3C2D' : '#AE4E30';
-  const brandOnPrimary = isDark ? palette.brand.neutral.paper : palette.brand.neutral.ink;
+  const brandOnPrimary = isDark ? palette.brand.neutral.ink : palette.brand.neutral.paper;
   const statusBarBackground = isBrandVariant ? brandSurface : palette.backgroundMuted;
   const statusBarForeground = isBrandVariant ? brandOnPrimary : palette.foregroundMuted;
   const statusBarBorder = isBrandVariant ? brandSurfacePressed : palette.border;

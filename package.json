@@ -2,7 +2,7 @@
   "name": "claude-code-theme",
   "displayName": "Claude Code Theme",
   "description": "Claude-aligned code theme system for VS Code, designed for clarity, endurance, and semantic meaning.",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "publisher": "ashwingopalsamy",
   "author": {
     "name": "Ashwin Gopalsamy",
