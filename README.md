@@ -15,7 +15,7 @@
 </p>
 
 ```txt
-4 theme variants • 243 workbench colors each • 81 TextMate rules • 37 semantic token rules
+4 theme variants • 369 workbench colors each • 81 TextMate rules • 37 semantic token rules
 ```
 
 > [!TIP]
@@ -44,7 +44,7 @@ Activate any variant in `Preferences: Color Theme`.
 
 This is not just a palette swap. The build compiles:
 
-- full workbench theming (tabs, sidebar, panels, status bar, notifications, terminal, git decorations, minimap)
+- full workbench theming (tabs, sidebar, panels, status bar, notifications, terminal + ANSI, git decorations, minimap, chat/inline chat, merge editor, notebook, testing)
 - semantic token rules for declarations, readonly/static modifiers, decorators, default libraries, and more
 
 TextMate scope packs include:
@@ -90,6 +90,7 @@ Local run from `pnpm contrast` on **February 10, 2026**:
 - `pnpm build` (generates `themes/*.json`)
 - `pnpm compile` (TypeScript no-emit check)
 - `pnpm contrast` (WCAG-oriented contrast checks)
+- `pnpm test:theme` (assertion checks for ANSI readability + modern surface coverage)
 - `pnpm package` (VSIX build)
 
 CI workflow: `.github/workflows/ci.yml`  

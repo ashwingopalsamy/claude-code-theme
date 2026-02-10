@@ -45,6 +45,7 @@ Before opening a PR:
 - [ ] `pnpm build` passes
 - [ ] `pnpm compile` passes
 - [ ] `pnpm contrast` passes
+- [ ] `pnpm test:theme` passes
 - [ ] `pnpm package` succeeds
 - [ ] Docs are updated when behavior changes
 

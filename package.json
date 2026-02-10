@@ -2,7 +2,7 @@
   "name": "claude-code-theme",
   "displayName": "Claude Code Theme",
   "description": "Claude-aligned code theme system for VS Code, designed for clarity, endurance, and semantic meaning.",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "publisher": "ashwingopalsamy",
   "author": {
     "name": "Ashwin Gopalsamy",
@@ -67,8 +67,9 @@
   },
   "scripts": {
     "build": "tsx build.ts",
-    "check": "pnpm build && pnpm compile && pnpm contrast",
+    "check": "pnpm build && pnpm compile && pnpm contrast && pnpm test:theme",
     "contrast": "tsx scripts/contrast-report.ts",
+    "test:theme": "node test/theme-quality.test.mjs",
     "package": "vsce package",
     "compile": "tsc --noEmit"
   },
