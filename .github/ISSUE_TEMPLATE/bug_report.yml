@@ -1,0 +1,86 @@
+name: Bug report
+description: Report a bug in theme behavior, token mapping, packaging, or extension metadata
+title: "[BUG] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this issue.
+        Please include enough detail to reproduce the bug quickly.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing issues first
+          required: true
+        - label: I tested with the latest commit or latest packaged VSIX
+          required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What is broken?
+      description: Describe the actual behavior.
+      placeholder: Token color mismatch, unreadable contrast, incorrect theme contribution, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      placeholder: Clear expected behavior.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Provide exact steps and file/language context.
+      placeholder: |
+        1. Install theme
+        2. Open a Go file
+        3. Set "Claude Code Dark"
+        4. Observe ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Theme variant
+      options:
+        - Claude Code Dark
+        - Claude Code Dark High Contrast
+        - Claude Code Light
+        - Claude Code Light High Contrast
+    validations:
+      required: true
+
+  - type: input
+    id: vscode_version
+    attributes:
+      label: VS Code version
+      placeholder: e.g. 1.96.0
+    validations:
+      required: true
+
+  - type: input
+    id: extension_version
+    attributes:
+      label: Extension version
+      placeholder: e.g. 0.1.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: Screenshots, snippets, or related references.
+      render: markdown

@@ -1,0 +1,67 @@
+name: Feature request
+description: Suggest an improvement to theme design, token strategy, tooling, or release workflow
+title: "[FEATURE] "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing an idea.
+        Please describe the problem first, then the proposed solution.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing feature requests first
+          required: true
+        - label: This issue is for a single feature request
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What is currently hard, missing, or ambiguous?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the desired behavior and scope.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Syntax tokens
+        - Semantic tokens
+        - Workbench UI colors
+        - Accessibility/contrast
+        - Tooling/build
+        - Documentation
+        - Release/distribution
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Existing workarounds or other approaches.
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Links, screenshots, or design references (if available).
+      render: markdown

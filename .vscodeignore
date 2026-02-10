@@ -3,9 +3,15 @@ scripts/**
 docs/**
 test/**
 node_modules/**
+.github/**
 .gitignore
 tsconfig.json
 build.ts
 pnpm-lock.yaml
 assets/screenshot-*.svg
 *.vsix
+README copy.md
+CHANGELOG.md
+CONTRIBUTING.md
+SECURITY.md
+SUPPORT.md
