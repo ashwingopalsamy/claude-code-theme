@@ -11,30 +11,11 @@ export const defaultOptions: ThemeOptions = {
   emphasizeDeclarations: true,
 };
 
-export const italicOptions: ThemeOptions = {
-  enableItalics: true,
-  italicComments: true,
-  italicKeywords: true,
-  emphasizeDeclarations: true,
-};
-
-const themeNames: Record<ThemeVariant, { regular: string; italic: string }> = {
-  dark: {
-    regular: 'Claude Code Dark',
-    italic: 'Claude Code Dark Italic',
-  },
-  'dark-high-contrast': {
-    regular: 'Claude Code Dark High Contrast',
-    italic: 'Claude Code Dark High Contrast',
-  },
-  light: {
-    regular: 'Claude Code Light',
-    italic: 'Claude Code Light Italic',
-  },
-  'light-high-contrast': {
-    regular: 'Claude Code Light High Contrast',
-    italic: 'Claude Code Light High Contrast',
-  },
+const themeNames: Record<ThemeVariant, string> = {
+  dark: 'Claude Code Dark',
+  'dark-high-contrast': 'Claude Code Dark High Contrast',
+  light: 'Claude Code Light',
+  'light-high-contrast': 'Claude Code Light High Contrast',
 };
 
 export function compileTheme(
@@ -52,11 +33,8 @@ export function compileTheme(
     options,
   };
 
-  const useItalicName = options.enableItalics && !variant.includes('high-contrast');
-  const nameSet = themeNames[variant];
-
   return {
-    name: useItalicName ? nameSet.italic : nameSet.regular,
+    name: themeNames[variant],
     type: palette.type,
     colors: getUiColors(context),
     semanticHighlighting: true,

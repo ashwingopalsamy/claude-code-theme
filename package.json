@@ -49,11 +49,6 @@
         "path": "./themes/claude-code-dark.json"
       },
       {
-        "label": "Claude Code Dark Italic",
-        "uiTheme": "vs-dark",
-        "path": "./themes/claude-code-dark-italic.json"
-      },
-      {
         "label": "Claude Code Dark High Contrast",
         "uiTheme": "hc-black",
         "path": "./themes/claude-code-dark-high-contrast.json"
@@ -64,11 +59,6 @@
         "path": "./themes/claude-code-light.json"
       },
       {
-        "label": "Claude Code Light Italic",
-        "uiTheme": "vs",
-        "path": "./themes/claude-code-light-italic.json"
-      },
-      {
         "label": "Claude Code Light High Contrast",
         "uiTheme": "hc-light",
         "path": "./themes/claude-code-light-high-contrast.json"
@@ -77,6 +67,7 @@
   },
   "scripts": {
     "build": "tsx build.ts",
+    "check": "pnpm build && pnpm compile && pnpm contrast",
     "contrast": "tsx scripts/contrast-report.ts",
     "package": "vsce package",
     "compile": "tsc --noEmit"

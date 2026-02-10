@@ -2,7 +2,7 @@
 
 import { mkdir, writeFile } from 'fs/promises';
 import { join } from 'path';
-import { compileTheme, defaultOptions, italicOptions } from './src/theme';
+import { compileTheme, defaultOptions } from './src/theme';
 import type { ThemeVariant } from './src/theme/palette';
 import type { ThemeOptions } from './src/types';
 
@@ -19,11 +19,6 @@ const targets: BuildTarget[] = [
     filename: 'claude-code-dark.json',
   },
   {
-    variant: 'dark',
-    options: italicOptions,
-    filename: 'claude-code-dark-italic.json',
-  },
-  {
     variant: 'dark-high-contrast',
     options: defaultOptions,
     filename: 'claude-code-dark-high-contrast.json',
@@ -32,11 +27,6 @@ const targets: BuildTarget[] = [
     variant: 'light',
     options: defaultOptions,
     filename: 'claude-code-light.json',
-  },
-  {
-    variant: 'light',
-    options: italicOptions,
-    filename: 'claude-code-light-italic.json',
   },
   {
     variant: 'light-high-contrast',
