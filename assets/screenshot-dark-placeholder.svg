@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
-  <title id="title">Claude Code Theme dark placeholder</title>
-  <desc id="desc">Placeholder image for upcoming dark theme screenshot.</desc>
-  <rect width="1280" height="720" fill="#141413"/>
-  <rect x="64" y="72" width="1152" height="576" rx="12" fill="#1A1917" stroke="#4A473F"/>
-  <text x="640" y="320" text-anchor="middle" fill="#EAE7DF" font-family="Georgia, serif" font-size="42">Claude Code Dark</text>
-  <text x="640" y="372" text-anchor="middle" fill="#A9A39A" font-family="Georgia, serif" font-size="24">Screenshot placeholder</text>
-</svg>

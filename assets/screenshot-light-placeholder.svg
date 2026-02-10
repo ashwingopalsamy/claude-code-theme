@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
-  <title id="title">Claude Code Theme light placeholder</title>
-  <desc id="desc">Placeholder image for upcoming light theme screenshot.</desc>
-  <rect width="1280" height="720" fill="#FAF9F5"/>
-  <rect x="64" y="72" width="1152" height="576" rx="12" fill="#F0EEE6" stroke="#D9D5CC"/>
-  <text x="640" y="320" text-anchor="middle" fill="#1A1917" font-family="Georgia, serif" font-size="42">Claude Code Light</text>
-  <text x="640" y="372" text-anchor="middle" fill="#6B665F" font-family="Georgia, serif" font-size="24">Screenshot placeholder</text>
-</svg>
