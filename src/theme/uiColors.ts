@@ -11,17 +11,18 @@ export function getUiColors(context: ThemeContext): WorkbenchColors {
   const lineAlpha = isDark ? 0.12 : 0.08;
   const subtleShadow = isDark ? '#00000066' : '#0000001f';
   const brandPrimary = palette.brand.primary;
-  const brandPrimaryHover = '#BF5A39';
-  const brandPrimaryPressed = '#AE4E30';
-  const brandOnPrimary = palette.brand.neutral.ink;
-  const statusBarBackground = isBrandVariant ? brandPrimary : palette.backgroundMuted;
+  const brandSurface = isDark ? '#AE4E30' : brandPrimary;
+  const brandSurfaceHover = isDark ? '#9E452F' : '#BF5A39';
+  const brandSurfacePressed = isDark ? '#8F3C2D' : '#AE4E30';
+  const brandOnPrimary = isDark ? palette.brand.neutral.paper : palette.brand.neutral.ink;
+  const statusBarBackground = isBrandVariant ? brandSurface : palette.backgroundMuted;
   const statusBarForeground = isBrandVariant ? brandOnPrimary : palette.foregroundMuted;
-  const statusBarBorder = isBrandVariant ? brandPrimaryPressed : palette.border;
+  const statusBarBorder = isBrandVariant ? brandSurfacePressed : palette.border;
   const statusBarItemHoverBackground = isBrandVariant
-    ? opacity(brandOnPrimary, 0.14)
+    ? opacity(brandOnPrimary, isDark ? 0.18 : 0.14)
     : opacity(palette.accent, softSelectionAlpha);
-  const primaryButtonBackground = isBrandVariant ? brandPrimary : palette.accent;
-  const primaryButtonHoverBackground = isBrandVariant ? brandPrimaryHover : palette.accentHover;
+  const primaryButtonBackground = isBrandVariant ? brandSurface : palette.accent;
+  const primaryButtonHoverBackground = isBrandVariant ? brandSurfaceHover : palette.accentHover;
   const primaryButtonForeground = isBrandVariant ? brandOnPrimary : palette.background;
 
   const bracketColors = [
@@ -63,7 +64,7 @@ export function getUiColors(context: ThemeContext): WorkbenchColors {
     'activityBar.activeFocusBorder': palette.accent,
     'activityBar.activeBackground': opacity(palette.accent, softSelectionAlpha),
     'activityBar.border': palette.border,
-    'activityBarBadge.background': isBrandVariant ? brandPrimary : palette.accent,
+    'activityBarBadge.background': isBrandVariant ? brandSurface : palette.accent,
     'activityBarBadge.foreground': isBrandVariant ? brandOnPrimary : palette.background,
     'activityBarTop.foreground': palette.foreground,
     'activityBarTop.activeBorder': palette.accent,
@@ -213,8 +214,8 @@ export function getUiColors(context: ThemeContext): WorkbenchColors {
     'statusBarItem.hoverBackground': statusBarItemHoverBackground,
     'statusBarItem.prominentBackground': opacity(palette.accent, softSelectionAlpha),
     'statusBarItem.prominentHoverBackground': opacity(palette.accent, selectionAlpha),
-    'statusBarItem.remoteBackground': isBrandVariant ? brandPrimaryPressed : palette.accent,
-    'statusBarItem.remoteForeground': isBrandVariant ? palette.brand.neutral.paper : palette.background,
+    'statusBarItem.remoteBackground': isBrandVariant ? (isDark ? brandSurfacePressed : brandSurface) : palette.accent,
+    'statusBarItem.remoteForeground': isBrandVariant ? brandOnPrimary : palette.background,
     'statusBarItem.errorBackground': palette.status.error,
     'statusBarItem.warningBackground': palette.status.warning,
     'statusBar.focusBorder': palette.accent,
@@ -304,7 +305,7 @@ export function getUiColors(context: ThemeContext): WorkbenchColors {
     'badge.background': palette.backgroundMuted,
     'badge.foreground': palette.foreground,
 
-    'progressBar.background': isBrandVariant ? brandPrimary : palette.accent,
+    'progressBar.background': isBrandVariant ? brandSurface : palette.accent,
 
     'minimap.background': palette.background,
     'minimap.findMatchHighlight': palette.syntax.number,
