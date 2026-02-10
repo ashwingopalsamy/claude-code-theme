@@ -2,7 +2,7 @@
   "name": "claude-code-theme",
   "displayName": "Claude Code Theme",
   "description": "Claude-aligned code theme system for VS Code, designed for clarity, endurance, and semantic meaning.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "ashwingopalsamy",
   "author": {
     "name": "Ashwin Gopalsamy",
@@ -54,6 +54,11 @@
         "path": "./themes/claude-code-dark-high-contrast.json"
       },
       {
+        "label": "Claude Code Dark Brand",
+        "uiTheme": "vs-dark",
+        "path": "./themes/claude-code-dark-brand.json"
+      },
+      {
         "label": "Claude Code Light",
         "uiTheme": "vs",
         "path": "./themes/claude-code-light.json"
@@ -62,6 +67,11 @@
         "label": "Claude Code Light High Contrast",
         "uiTheme": "hc-light",
         "path": "./themes/claude-code-light-high-contrast.json"
+      },
+      {
+        "label": "Claude Code Light Brand",
+        "uiTheme": "vs",
+        "path": "./themes/claude-code-light-brand.json"
       }
     ]
   },

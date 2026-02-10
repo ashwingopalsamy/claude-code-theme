@@ -184,7 +184,13 @@ export interface AnsiColors {
   white: string;
 }
 
-export type ThemeVariant = 'dark' | 'dark-high-contrast' | 'light' | 'light-high-contrast';
+export type ThemeVariant =
+  | 'dark'
+  | 'dark-high-contrast'
+  | 'dark-brand'
+  | 'light'
+  | 'light-high-contrast'
+  | 'light-brand';
 
 const darkPalette: ClaudePalette = {
   variant: 'dark',
@@ -378,6 +384,20 @@ const lightHighContrastPalette: ClaudePalette = {
   },
 };
 
+const darkBrandPalette: ClaudePalette = {
+  ...darkPalette,
+  variant: 'dark-brand',
+  accent: brandTokens.primary,
+  accentHover: '#BF5A39',
+};
+
+const lightBrandPalette: ClaudePalette = {
+  ...lightPalette,
+  variant: 'light-brand',
+  accent: brandTokens.primary,
+  accentHover: '#BF5A39',
+};
+
 const darkAnsi: { normal: AnsiColors; bright: AnsiColors } = {
   normal: {
     black: '#1A1917',
@@ -473,13 +493,17 @@ const lightHighContrastAnsi: { normal: AnsiColors; bright: AnsiColors } = {
 export const palettes: Record<ThemeVariant, ClaudePalette> = {
   dark: darkPalette,
   'dark-high-contrast': darkHighContrastPalette,
+  'dark-brand': darkBrandPalette,
   light: lightPalette,
   'light-high-contrast': lightHighContrastPalette,
+  'light-brand': lightBrandPalette,
 };
 
 export const ansiPalettes: Record<ThemeVariant, { normal: AnsiColors; bright: AnsiColors }> = {
   dark: darkAnsi,
   'dark-high-contrast': darkHighContrastAnsi,
+  'dark-brand': darkAnsi,
   light: lightAnsi,
   'light-high-contrast': lightHighContrastAnsi,
+  'light-brand': lightAnsi,
 };

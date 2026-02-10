@@ -14,8 +14,10 @@ export const defaultOptions: ThemeOptions = {
 const themeNames: Record<ThemeVariant, string> = {
   dark: 'Claude Code Dark',
   'dark-high-contrast': 'Claude Code Dark High Contrast',
+  'dark-brand': 'Claude Code Dark Brand',
   light: 'Claude Code Light',
   'light-high-contrast': 'Claude Code Light High Contrast',
+  'light-brand': 'Claude Code Light Brand',
 };
 
 export function compileTheme(

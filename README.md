@@ -15,7 +15,7 @@
 </p>
 
 ```txt
-4 theme variants • 369 workbench colors each • 81 TextMate rules • 37 semantic token rules
+6 theme variants • 369 workbench colors each • 81 TextMate rules • 37 semantic token rules
 ```
 
 > [!TIP]
@@ -35,8 +35,10 @@
 | --- | --- | --- |
 | `Claude Code Dark` | Balanced warm dark | Daily coding + mixed workloads |
 | `Claude Code Dark High Contrast` | Crisp high separation dark | Dense files, low-light focus |
+| `Claude Code Dark Brand` | Claude-orange chrome accents | Brand-forward terminal + status bar look |
 | `Claude Code Light` | Soft paper-like light | Daytime editing without glare |
 | `Claude Code Light High Contrast` | Clear, punchy light | Bright rooms + accessibility-first setup |
+| `Claude Code Light Brand` | Paper-like light with orange chrome | Daytime + brand-forward UI |
 
 Activate any variant in `Preferences: Color Theme`.
 
@@ -63,7 +65,7 @@ TextMate scope packs include:
 
 ```mermaid
 flowchart LR
-  A["brandTokens<br/>src/theme/palette.ts"] --> B["variant palettes<br/>dark/light + high contrast"]
+  A["brandTokens<br/>src/theme/palette.ts"] --> B["variant palettes<br/>dark/light + high contrast + brand"]
   B --> C["compileTheme()"]
   C --> D["Workbench colors<br/>getUiColors()"]
   C --> E["Semantic tokens<br/>getSemanticTokens()"]
@@ -81,8 +83,10 @@ Local run from `pnpm contrast` on **February 10, 2026**:
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | Claude Code Dark | 14.92 | 8.51 | 8.70 | 11.79 | 12.98 | 13.59 |
 | Claude Code Dark High Contrast | 16.98 | 11.49 | 10.87 | 13.55 | 14.95 | 15.17 |
+| Claude Code Dark Brand | 14.92 | 8.51 | 8.70 | 11.79 | 12.98 | 13.59 |
 | Claude Code Light | 16.68 | 5.45 | 4.92 | 5.07 | 4.69 | 4.59 |
 | Claude Code Light High Contrast | 16.61 | 5.34 | 5.35 | 4.73 | 4.88 | 5.08 |
+| Claude Code Light Brand | 16.68 | 5.45 | 4.92 | 5.07 | 4.69 | 4.59 |
 
 <details>
 <summary><strong>Quality gates in CI</strong></summary>

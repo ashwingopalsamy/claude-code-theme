@@ -10,8 +10,10 @@ const root = join(__dirname, '..');
 const themeFiles = {
   dark: 'claude-code-dark.json',
   'dark-high-contrast': 'claude-code-dark-high-contrast.json',
+  'dark-brand': 'claude-code-dark-brand.json',
   light: 'claude-code-light.json',
   'light-high-contrast': 'claude-code-light-high-contrast.json',
+  'light-brand': 'claude-code-light-brand.json',
 };
 
 const requiredWorkbenchKeys = [

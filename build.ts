@@ -24,6 +24,11 @@ const targets: BuildTarget[] = [
     filename: 'claude-code-dark-high-contrast.json',
   },
   {
+    variant: 'dark-brand',
+    options: defaultOptions,
+    filename: 'claude-code-dark-brand.json',
+  },
+  {
     variant: 'light',
     options: defaultOptions,
     filename: 'claude-code-light.json',
@@ -32,6 +37,11 @@ const targets: BuildTarget[] = [
     variant: 'light-high-contrast',
     options: defaultOptions,
     filename: 'claude-code-light-high-contrast.json',
+  },
+  {
+    variant: 'light-brand',
+    options: defaultOptions,
+    filename: 'claude-code-light-brand.json',
   },
 ];
 
