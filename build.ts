@@ -43,6 +43,37 @@ const targets: BuildTarget[] = [
     options: defaultOptions,
     filename: 'claude-code-light-brand.json',
   },
+  // No-bold variants
+  {
+    variant: 'dark-no-bold',
+    options: { ...defaultOptions, emphasizeDeclarations: false },
+    filename: 'claude-code-dark-no-bold.json',
+  },
+  {
+    variant: 'dark-high-contrast-no-bold',
+    options: { ...defaultOptions, emphasizeDeclarations: false },
+    filename: 'claude-code-dark-high-contrast-no-bold.json',
+  },
+  {
+    variant: 'dark-brand-no-bold',
+    options: { ...defaultOptions, emphasizeDeclarations: false },
+    filename: 'claude-code-dark-brand-no-bold.json',
+  },
+  {
+    variant: 'light-no-bold',
+    options: { ...defaultOptions, emphasizeDeclarations: false },
+    filename: 'claude-code-light-no-bold.json',
+  },
+  {
+    variant: 'light-high-contrast-no-bold',
+    options: { ...defaultOptions, emphasizeDeclarations: false },
+    filename: 'claude-code-light-high-contrast-no-bold.json',
+  },
+  {
+    variant: 'light-brand-no-bold',
+    options: { ...defaultOptions, emphasizeDeclarations: false },
+    filename: 'claude-code-light-brand-no-bold.json',
+  },
 ];
 
 async function generateThemes() {

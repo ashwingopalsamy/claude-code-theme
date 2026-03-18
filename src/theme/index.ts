@@ -18,6 +18,12 @@ const themeNames: Record<ThemeVariant, string> = {
   light: 'Claude Code Light',
   'light-high-contrast': 'Claude Code Light High Contrast',
   'light-brand': 'Claude Code Light Brand',
+  'dark-no-bold': 'Claude Code Dark (No Bold)',
+  'dark-high-contrast-no-bold': 'Claude Code Dark High Contrast (No Bold)',
+  'dark-brand-no-bold': 'Claude Code Dark Brand (No Bold)',
+  'light-no-bold': 'Claude Code Light (No Bold)',
+  'light-high-contrast-no-bold': 'Claude Code Light High Contrast (No Bold)',
+  'light-brand-no-bold': 'Claude Code Light Brand (No Bold)',
 };
 
 export function compileTheme(

@@ -15,7 +15,7 @@
 </p>
 
 ```txt
-6 theme variants • 369 workbench colors each • 81 TextMate rules • 37 semantic token rules
+12 theme variants • 369 workbench colors each • 81 TextMate rules • 37 semantic token rules
 ```
 
 > [!TIP]
@@ -39,6 +39,8 @@
 | `Claude Code Light` | Soft paper-like light | Daytime editing without glare |
 | `Claude Code Light High Contrast` | Clear, punchy light | Bright rooms + accessibility-first setup |
 | `Claude Code Light Brand` | Paper-like light with orange chrome | Daytime + brand-forward UI |
+
+Every variant above also ships a **(No Bold)** edition that disables bold emphasis on declarations, keywords, and data keys — same colors, zero bold in code tokens. Markdown headings and bold markup remain bold.
 
 Activate any variant in `Preferences: Color Theme`.
 
