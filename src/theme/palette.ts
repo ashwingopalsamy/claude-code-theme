@@ -190,7 +190,13 @@ export type ThemeVariant =
   | 'dark-brand'
   | 'light'
   | 'light-high-contrast'
-  | 'light-brand';
+  | 'light-brand'
+  | 'dark-no-bold'
+  | 'dark-high-contrast-no-bold'
+  | 'dark-brand-no-bold'
+  | 'light-no-bold'
+  | 'light-high-contrast-no-bold'
+  | 'light-brand-no-bold';
 
 const darkPalette: ClaudePalette = {
   variant: 'dark',
@@ -497,6 +503,12 @@ export const palettes: Record<ThemeVariant, ClaudePalette> = {
   light: lightPalette,
   'light-high-contrast': lightHighContrastPalette,
   'light-brand': lightBrandPalette,
+  'dark-no-bold': darkPalette,
+  'dark-high-contrast-no-bold': darkHighContrastPalette,
+  'dark-brand-no-bold': darkBrandPalette,
+  'light-no-bold': lightPalette,
+  'light-high-contrast-no-bold': lightHighContrastPalette,
+  'light-brand-no-bold': lightBrandPalette,
 };
 
 export const ansiPalettes: Record<ThemeVariant, { normal: AnsiColors; bright: AnsiColors }> = {
@@ -506,4 +518,10 @@ export const ansiPalettes: Record<ThemeVariant, { normal: AnsiColors; bright: An
   light: lightAnsi,
   'light-high-contrast': lightHighContrastAnsi,
   'light-brand': lightAnsi,
+  'dark-no-bold': darkAnsi,
+  'dark-high-contrast-no-bold': darkHighContrastAnsi,
+  'dark-brand-no-bold': darkAnsi,
+  'light-no-bold': lightAnsi,
+  'light-high-contrast-no-bold': lightHighContrastAnsi,
+  'light-brand-no-bold': lightAnsi,
 };

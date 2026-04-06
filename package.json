@@ -72,6 +72,36 @@
         "label": "Claude Code Light Brand",
         "uiTheme": "vs",
         "path": "./themes/claude-code-light-brand.json"
+      },
+      {
+        "label": "Claude Code Dark (No Bold)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/claude-code-dark-no-bold.json"
+      },
+      {
+        "label": "Claude Code Dark High Contrast (No Bold)",
+        "uiTheme": "hc-black",
+        "path": "./themes/claude-code-dark-high-contrast-no-bold.json"
+      },
+      {
+        "label": "Claude Code Dark Brand (No Bold)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/claude-code-dark-brand-no-bold.json"
+      },
+      {
+        "label": "Claude Code Light (No Bold)",
+        "uiTheme": "vs",
+        "path": "./themes/claude-code-light-no-bold.json"
+      },
+      {
+        "label": "Claude Code Light High Contrast (No Bold)",
+        "uiTheme": "hc-light",
+        "path": "./themes/claude-code-light-high-contrast-no-bold.json"
+      },
+      {
+        "label": "Claude Code Light Brand (No Bold)",
+        "uiTheme": "vs",
+        "path": "./themes/claude-code-light-brand-no-bold.json"
       }
     ]
   },
