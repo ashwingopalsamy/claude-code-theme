@@ -12,6 +12,8 @@
   <a href="https://github.com/ashwingopalsamy/claude-code-theme/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/ashwingopalsamy/claude-code-theme/actions/workflows/ci.yml/badge.svg"></a>
   <a href="https://marketplace.visualstudio.com/items?itemName=ashwingopalsamy.claude-code-theme"><img alt="Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/ashwingopalsamy.claude-code-theme?label=Marketplace"></a>
   <a href="https://marketplace.visualstudio.com/items?itemName=ashwingopalsamy.claude-code-theme"><img alt="Marketplace Installs" src="https://img.shields.io/visual-studio-marketplace/i/ashwingopalsamy.claude-code-theme"></a>
+  <a href="https://open-vsx.org/extension/ashwingopalsamy/claude-code-theme"><img alt="Open VSX Version" src="https://img.shields.io/open-vsx/v/ashwingopalsamy/claude-code-theme?label=Open%20VSX"></a>
+  <a href="https://open-vsx.org/extension/ashwingopalsamy/claude-code-theme"><img alt="Open VSX Downloads" src="https://img.shields.io/open-vsx/dt/ashwingopalsamy/claude-code-theme"></a>
 </p>
 
 ```txt
@@ -118,7 +120,18 @@ Publish workflow: `.github/workflows/publish.yml`
 </details>
 
 <details>
-<summary><strong>CLI</strong></summary>
+<summary><strong>Open VSX / VSCodium / Cursor</strong></summary>
+
+- **VSCodium / Open VSX CLI:**
+  ```bash
+  codium --install-extension ashwingopalsamy.claude-code-theme
+  ```
+- **Open VSX Registry:** [Claude Code Theme on Open VSX](https://open-vsx.org/extension/ashwingopalsamy/claude-code-theme)
+
+</details>
+
+<details>
+<summary><strong>VS Code CLI</strong></summary>
 
 ```bash
 code --install-extension ashwingopalsamy.claude-code-theme
@@ -148,6 +161,7 @@ Brand token normalization lives in `docs/brand-tokens.md`.[^brand]
 - Maintainer: [Ashwin Gopalsamy](https://linkedin.com/in/ashwingopalsamy)
 - Repository: [ashwingopalsamy/claude-code-theme](https://github.com/ashwingopalsamy/claude-code-theme)
 - Marketplace: [Claude Code Theme](https://marketplace.visualstudio.com/items?itemName=ashwingopalsamy.claude-code-theme)
+- Open VSX: [Claude Code Theme](https://open-vsx.org/extension/ashwingopalsamy/claude-code-theme)
 - Contributing: `CONTRIBUTING.md`
 - Security: `SECURITY.md`
 - Support: `SUPPORT.md`

@@ -1,4 +1,4 @@
-name: Publish to VS Code Marketplace
+name: Publish Extension
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   publish:
-    name: publish-marketplace
+    name: publish-marketplaces
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -47,7 +47,7 @@ jobs:
       - name: Build VSIX
         run: pnpm exec vsce package --out claude-code-theme.vsix
 
-      - name: Publish to Marketplace
+      - name: Publish to VS Code Marketplace
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
         run: |
@@ -56,3 +56,13 @@ jobs:
             exit 1
           fi
           pnpm exec vsce publish --packagePath claude-code-theme.vsix --pat "$VSCE_PAT" --skip-duplicate
+
+      - name: Publish to Open VSX Registry
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        run: |
+          if [ -z "${OVSX_PAT:-}" ]; then
+            echo "::warning::Missing OVSX_PAT secret. Add it in repository settings to publish to Open VSX."
+          else
+            pnpm exec ovsx publish claude-code-theme.vsix --pat "$OVSX_PAT" --skip-duplicate
+          fi

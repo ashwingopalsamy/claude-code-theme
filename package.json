@@ -111,12 +111,15 @@
     "contrast": "tsx scripts/contrast-report.ts",
     "test:theme": "node test/theme-quality.test.mjs",
     "package": "vsce package",
+    "publish:marketplace": "vsce publish",
+    "publish:openvsx": "ovsx publish",
     "compile": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/vscode": "^1.80.0",
     "@vscode/vsce": "^2.22.0",
+    "ovsx": "^0.9.3",
     "tsx": "^4.6.0",
     "typescript": "^5.3.0"
   }
