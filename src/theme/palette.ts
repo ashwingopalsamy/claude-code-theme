@@ -192,7 +192,11 @@ export type Flavor =
   | 'dark-brand'
   | 'light'
   | 'light-high-contrast'
-  | 'light-brand';
+  | 'light-brand'
+  | 'midnight'
+  | 'dusk'
+  | 'mono-dark'
+  | 'mono-light';
 
 const darkPalette: ClaudePalette = {
   flavor: 'dark',
@@ -410,6 +414,99 @@ const lightBrandPalette: ClaudePalette = {
   accentHover: '#BF5A39',
 };
 
+const midnightPalette: ClaudePalette = {
+  ...darkPalette,
+  flavor: 'midnight',
+  background: '#000000',
+  backgroundAlt: '#0A0A09',
+  backgroundMuted: '#1A1917',
+  surface: '#121110',
+  surfaceHover: '#1F1D1A',
+  border: '#2B2A27',
+  borderStrong: '#4A473F',
+  foreground: '#EAE7DF',
+  foregroundMuted: '#A9A39A',
+  foregroundSubtle: '#6B665F',
+  accent: '#D97757',
+  accentHover: '#E58F72',
+};
+
+const duskPalette: ClaudePalette = {
+  ...darkPalette,
+  flavor: 'dusk',
+  background: '#262624',
+  backgroundAlt: '#1F1E1D',
+  backgroundMuted: '#30302E',
+  surface: '#2B2B29',
+  surfaceHover: '#353532',
+  border: '#3E3E38',
+  borderStrong: '#5E5D57',
+  foreground: '#F0EEE6',
+  foregroundMuted: '#C2C0B6',
+  foregroundSubtle: '#85837C',
+  accent: '#D97757',
+  accentHover: '#E08A6D',
+  syntax: {
+    ...darkPalette.syntax,
+    comment: '#9C9A92',
+    punctuation: '#B5B2A8',
+    operator: '#D6D0C4',
+  },
+};
+
+const monoDarkPalette: ClaudePalette = {
+  ...darkPalette,
+  flavor: 'mono-dark',
+  accent: '#D97757',
+  accentHover: '#E58F72',
+  syntax: {
+    ...darkPalette.syntax,
+    keyword: '#D97757',
+    tag: '#D97757',
+    function: '#F5F2E9',
+    type: '#EAE7DF',
+    variable: '#D9D5CC',
+    parameter: '#D9D5CC',
+    property: '#C9C4BA',
+    namespace: '#C9C4BA',
+    string: '#D4A27F',
+    attribute: '#D4A27F',
+    decorator: '#D4A27F',
+    constant: '#EBDBBC',
+    number: '#EBDBBC',
+    regexp: '#EBDBBC',
+    operator: '#A9A39A',
+    punctuation: '#8D877D',
+    comment: '#8D877D',
+  },
+};
+
+const monoLightPalette: ClaudePalette = {
+  ...lightPalette,
+  flavor: 'mono-light',
+  accent: '#CC785C',
+  syntax: {
+    ...lightPalette.syntax,
+    keyword: '#AE4E30',
+    tag: '#AE4E30',
+    function: '#141413',
+    type: '#1A1917',
+    variable: '#2B2A27',
+    parameter: '#3A3833',
+    property: '#4A473F',
+    namespace: '#4A473F',
+    string: '#8A6220',
+    attribute: '#8A6220',
+    decorator: '#8A6220',
+    constant: '#6B4F1B',
+    number: '#6B4F1B',
+    regexp: '#6B4F1B',
+    operator: '#6B665F',
+    punctuation: '#6E6962',
+    comment: '#6E6962',
+  },
+};
+
 const darkAnsi: { normal: AnsiColors; bright: AnsiColors } = {
   normal: {
     black: '#1A1917',
@@ -502,6 +599,16 @@ const lightHighContrastAnsi: { normal: AnsiColors; bright: AnsiColors } = {
   },
 };
 
+const midnightAnsi: { normal: AnsiColors; bright: AnsiColors } = {
+  ...darkAnsi,
+  normal: { ...darkAnsi.normal, black: '#2B2A27' },
+};
+
+const duskAnsi: { normal: AnsiColors; bright: AnsiColors } = {
+  normal: { ...darkAnsi.normal, black: '#30302E' },
+  bright: { ...darkAnsi.bright, black: '#746E67' },
+};
+
 export const palettes: Record<Flavor, ClaudePalette> = {
   dark: darkPalette,
   'dark-high-contrast': darkHighContrastPalette,
@@ -509,6 +616,10 @@ export const palettes: Record<Flavor, ClaudePalette> = {
   light: lightPalette,
   'light-high-contrast': lightHighContrastPalette,
   'light-brand': lightBrandPalette,
+  midnight: midnightPalette,
+  dusk: duskPalette,
+  'mono-dark': monoDarkPalette,
+  'mono-light': monoLightPalette,
 };
 
 export const ansiPalettes: Record<Flavor, { normal: AnsiColors; bright: AnsiColors }> = {
@@ -518,4 +629,8 @@ export const ansiPalettes: Record<Flavor, { normal: AnsiColors; bright: AnsiColo
   light: lightAnsi,
   'light-high-contrast': lightHighContrastAnsi,
   'light-brand': lightAnsi,
+  midnight: midnightAnsi,
+  dusk: duskAnsi,
+  'mono-dark': darkAnsi,
+  'mono-light': lightAnsi,
 };

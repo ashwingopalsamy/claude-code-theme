@@ -14,6 +14,10 @@ const flavors: { flavor: Flavor; label: string; uiTheme: UiTheme }[] = [
   { flavor: 'light', label: 'Claude Code Light', uiTheme: 'vs' },
   { flavor: 'light-high-contrast', label: 'Claude Code Light High Contrast', uiTheme: 'hc-light' },
   { flavor: 'light-brand', label: 'Claude Code Light Brand', uiTheme: 'vs' },
+  { flavor: 'midnight', label: 'Claude Code Midnight', uiTheme: 'vs-dark' },
+  { flavor: 'dusk', label: 'Claude Code Dusk', uiTheme: 'vs-dark' },
+  { flavor: 'mono-dark', label: 'Claude Code Mono Dark', uiTheme: 'vs-dark' },
+  { flavor: 'mono-light', label: 'Claude Code Mono Light', uiTheme: 'vs' },
 ];
 
 const weights = [

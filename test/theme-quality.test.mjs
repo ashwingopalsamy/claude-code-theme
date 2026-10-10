@@ -232,8 +232,8 @@ for (const [variant, file] of Object.entries(themeFiles)) {
   const ansiWhite = colors['terminal.ansiWhite'];
   const ansiBrightWhite = colors['terminal.ansiBrightWhite'];
   const ansiBrightBlack = colors['terminal.ansiBrightBlack'];
-  const minimumWhiteContrast = variant.startsWith('light') ? 4.5 : 7;
-  const minimumBrightWhiteContrast = variant.startsWith('light') ? 7 : 10;
+  const minimumWhiteContrast = theme.type === 'light' ? 4.5 : 7;
+  const minimumBrightWhiteContrast = theme.type === 'light' ? 7 : 10;
 
   assert.ok(
     contrastRatio(ansiWhite, terminalBackground) >= minimumWhiteContrast,
