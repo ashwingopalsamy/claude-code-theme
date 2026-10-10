@@ -1,8 +1,8 @@
 {
   "name": "claude-code-theme",
   "displayName": "Claude Code Theme",
-  "description": "Claude-aligned code theme system for VS Code, designed for clarity, endurance, and semantic meaning.",
-  "version": "1.2.2",
+  "description": "Warm, calm Claude-inspired themes. 10 flavors (dark, light, OLED midnight, dusk, mono, brand, high contrast), each with a no-bold twin.",
+  "version": "1.3.0",
   "publisher": "ashwingopalsamy",
   "author": {
     "name": "Ashwin Gopalsamy",
@@ -27,7 +27,16 @@
     "dark-theme",
     "syntax-highlighting",
     "accessibility",
-    "developer-ergonomics"
+    "developer-ergonomics",
+    "cursor",
+    "windsurf",
+    "oled",
+    "warm",
+    "orange",
+    "minimal",
+    "monochrome",
+    "no-bold",
+    "high-contrast"
   ],
   "icon": "logo.png",
   "galleryBanner": {
@@ -149,6 +158,7 @@
     "build": "tsx build.ts",
     "check": "pnpm build && pnpm compile && pnpm contrast && pnpm test:theme",
     "contrast": "tsx scripts/contrast-report.ts",
+    "shots": "tsx scripts/shots/render.ts",
     "test:theme": "node test/theme-quality.test.mjs",
     "package": "vsce package",
     "publish:marketplace": "vsce publish",
@@ -163,6 +173,7 @@
     "@vscode/vsce": "^2.22.0",
     "ovsx": "^0.9.3",
     "playwright": "^1.64.0",
+    "sharp": "^0.35.5",
     "shiki": "^4.5.0",
     "tsx": "^4.6.0",
     "typescript": "^5.3.0"

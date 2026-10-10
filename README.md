@@ -1,168 +1,61 @@
-<p align="center">
-  <img src="./logo.png" alt="Claude Code Theme logo" width="112" />
-</p>
-
+<p align="center"><img src="./logo.png" width="96" alt="Claude Code Theme logo"></p>
 <h1 align="center">Claude Code Theme</h1>
+<p align="center">warm, calm themes for long sessions with claude.<br>10 flavors · bold or no-bold · VS Code, Cursor, Windsurf</p>
+<p align="center"><a href="https://github.com/ashwingopalsamy/claude-code-theme/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/ashwingopalsamy/claude-code-theme/actions/workflows/ci.yml/badge.svg"></a> <a href="https://marketplace.visualstudio.com/items?itemName=ashwingopalsamy.claude-code-theme"><img alt="Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/ashwingopalsamy.claude-code-theme?label=Marketplace"></a> <a href="https://marketplace.visualstudio.com/items?itemName=ashwingopalsamy.claude-code-theme"><img alt="Marketplace Installs" src="https://img.shields.io/visual-studio-marketplace/i/ashwingopalsamy.claude-code-theme"></a> <a href="https://open-vsx.org/extension/ashwingopalsamy/claude-code-theme"><img alt="Open VSX Version" src="https://img.shields.io/open-vsx/v/ashwingopalsamy/claude-code-theme?label=Open%20VSX"></a> <a href="https://open-vsx.org/extension/ashwingopalsamy/claude-code-theme"><img alt="Open VSX Downloads" src="https://img.shields.io/open-vsx/dt/ashwingopalsamy/claude-code-theme"></a></p>
 
-<p align="center">
-  Warm Claude-inspired palettes for VS Code, built for <strong>long sessions</strong> and <strong>high signal syntax</strong>.
-</p>
+<p align="center"><img src="./assets/hero.png" alt="Claude Code Theme flavors"></p>
 
-<p align="center">
-  <a href="https://github.com/ashwingopalsamy/claude-code-theme/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/ashwingopalsamy/claude-code-theme/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=ashwingopalsamy.claude-code-theme"><img alt="Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/ashwingopalsamy.claude-code-theme?label=Marketplace"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=ashwingopalsamy.claude-code-theme"><img alt="Marketplace Installs" src="https://img.shields.io/visual-studio-marketplace/i/ashwingopalsamy.claude-code-theme"></a>
-  <a href="https://open-vsx.org/extension/ashwingopalsamy/claude-code-theme"><img alt="Open VSX Version" src="https://img.shields.io/open-vsx/v/ashwingopalsamy/claude-code-theme?label=Open%20VSX"></a>
-  <a href="https://open-vsx.org/extension/ashwingopalsamy/claude-code-theme"><img alt="Open VSX Downloads" src="https://img.shields.io/open-vsx/dt/ashwingopalsamy/claude-code-theme"></a>
-</p>
+## flavors
 
-```txt
-12 theme variants • 369 workbench colors each • 81 TextMate rules • 37 semantic token rules
+<table align="center">
+  <tr>
+    <td align="center"><img src="./assets/shots/dark.png" alt="Dark"><br><b>Dark</b> · the default. ink + clay</td>
+    <td align="center"><img src="./assets/shots/light.png" alt="Light"><br><b>Light</b> · ivory paper</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="./assets/shots/midnight.png" alt="Midnight"><br><b>Midnight</b> · true black, for OLED</td>
+    <td align="center"><img src="./assets/shots/dusk.png" alt="Dusk"><br><b>Dusk</b> · claude.ai after dark</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="./assets/shots/mono-dark.png" alt="Mono Dark"><br><b>Mono Dark</b> · focus mode. less noise</td>
+    <td align="center"><img src="./assets/shots/mono-light.png" alt="Mono Light"><br><b>Mono Light</b> · focus mode, daylight</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="./assets/shots/dark-brand.png" alt="Dark Brand"><br><b>Dark Brand</b> · clay chrome</td>
+    <td align="center"><img src="./assets/shots/light-brand.png" alt="Light Brand"><br><b>Light Brand</b> · clay chrome, light</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="./assets/shots/dark-high-contrast.png" alt="Dark High Contrast"><br><b>Dark High Contrast</b> · max legibility</td>
+    <td align="center"><img src="./assets/shots/light-high-contrast.png" alt="Light High Contrast"><br><b>Light High Contrast</b> · max legibility</td>
+  </tr>
+</table>
+
+<p align="center"><img src="./assets/swatches.png" alt="syntax palettes"></p>
+
+## install
+
+**VS Code** → `ext install ashwingopalsamy.claude-code-theme`
+
+**Cursor · Windsurf · VSCodium** → search "Claude Code Theme" (via [Open VSX](https://open-vsx.org/extension/ashwingopalsamy/claude-code-theme))
+
+then `⌘K ⌘T` (`Ctrl+K Ctrl+T`) → type **claude**.
+
+## no bold?
+
+every flavor ships a **(No Bold)** twin.
+
+<p align="center"><img src="./assets/bold-vs-nobold.png" alt="bold vs no bold"></p>
+
+## make it yours
+
+```jsonc
+{
+  "workbench.colorTheme": "Claude Code Dark",
+  "editor.fontFamily": "Geist Mono, JetBrains Mono, monospace",
+  "editor.tokenColorCustomizations": {
+    "[Claude Code Dark]": { "comments": { "fontStyle": "italic" } }
+  }
+}
 ```
 
-> [!TIP]
-> Install in one line: `code --install-extension ashwingopalsamy.claude-code-theme`
-
-## A Visual Tour
-
-| Claude Code Dark | Claude Code Dark High Contrast |
-| --- | --- |
-| ![Claude Code Dark screenshot](./assets/dark-theme-primary.png) | ![Claude Code Dark High Contrast screenshot](./assets/dark-theme-secondary.png) |
-| Claude Code Light | Claude Code Light High Contrast |
-| ![Claude Code Light screenshot](./assets/light-theme-primary.png) | ![Claude Code Light High Contrast screenshot](./assets/light-theme-secondary.png) |
-
-## Pick Your Cockpit
-
-| Variant | Character | Best fit |
-| --- | --- | --- |
-| `Claude Code Dark` | Balanced warm dark | Daily coding + mixed workloads |
-| `Claude Code Dark High Contrast` | Crisp high separation dark | Dense files, low-light focus |
-| `Claude Code Dark Brand` | Claude-orange chrome accents | Brand-forward terminal + status bar look |
-| `Claude Code Light` | Soft paper-like light | Daytime editing without glare |
-| `Claude Code Light High Contrast` | Clear, punchy light | Bright rooms + accessibility-first setup |
-| `Claude Code Light Brand` | Paper-like light with orange chrome | Daytime + brand-forward UI |
-
-Every variant above also ships a **(No Bold)** edition that disables bold emphasis on declarations, keywords, and data keys — same colors, zero bold in code tokens. Markdown headings and bold markup remain bold.
-
-Activate any variant in `Preferences: Color Theme`.
-
-## What Is Actually Tuned
-
-This is not just a palette swap. The build compiles:
-
-- full workbench theming (tabs, sidebar, panels, status bar, notifications, terminal + ANSI, git decorations, minimap, chat/inline chat, merge editor, notebook, testing)
-- semantic token rules for declarations, readonly/static modifiers, decorators, default libraries, and more
-
-TextMate scope packs include:
-
-- `JS/TS + JSX/TSX`
-- `Go`
-- `Python`
-- `Java`
-- `Rust`
-- `HTML/CSS`
-- `JSON/YAML`
-- `Markdown`
-- `SQL`
-
-## Engine Map
-
-```mermaid
-flowchart LR
-  A["brandTokens<br/>src/theme/palette.ts"] --> B["variant palettes<br/>dark/light + high contrast + brand"]
-  B --> C["compileTheme()"]
-  C --> D["Workbench colors<br/>getUiColors()"]
-  C --> E["Semantic tokens<br/>getSemanticTokens()"]
-  C --> F["TextMate tokens<br/>getTokenColors()"]
-  D --> G["themes/*.json"]
-  E --> G
-  F --> G
-```
-
-## Contrast Snapshot
-
-Local run from `pnpm contrast` on **February 10, 2026**:
-
-| Variant | Editor | Comment | Keyword | Function | String | Number |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Claude Code Dark | 14.92 | 8.51 | 8.70 | 11.79 | 12.98 | 13.59 |
-| Claude Code Dark High Contrast | 16.98 | 11.49 | 10.87 | 13.55 | 14.95 | 15.17 |
-| Claude Code Dark Brand | 14.92 | 8.51 | 8.70 | 11.79 | 12.98 | 13.59 |
-| Claude Code Light | 16.68 | 5.45 | 4.92 | 5.07 | 4.69 | 4.59 |
-| Claude Code Light High Contrast | 16.61 | 5.34 | 5.35 | 4.73 | 4.88 | 5.08 |
-| Claude Code Light Brand | 16.68 | 5.45 | 4.92 | 5.07 | 4.69 | 4.59 |
-
-<details>
-<summary><strong>Quality gates in CI</strong></summary>
-
-- `pnpm build` (generates `themes/*.json`)
-- `pnpm compile` (TypeScript no-emit check)
-- `pnpm contrast` (WCAG-oriented contrast checks)
-- `pnpm test:theme` (assertion checks for ANSI readability + modern surface coverage)
-- `pnpm package` (VSIX build)
-
-CI workflow: `.github/workflows/ci.yml`  
-Publish workflow: `.github/workflows/publish.yml`
-
-</details>
-
-## Install + Verify
-
-<details open>
-<summary><strong>Marketplace (recommended)</strong></summary>
-
-1. Open Extensions: <kbd>Ctrl/Cmd</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd>
-2. Search `Claude Code Theme`
-3. Install publisher `ashwingopalsamy`
-4. Run `Preferences: Color Theme`
-5. Select a `Claude Code ...` variant
-
-</details>
-
-<details>
-<summary><strong>Open VSX / VSCodium / Cursor</strong></summary>
-
-- **VSCodium / Open VSX CLI:**
-  ```bash
-  codium --install-extension ashwingopalsamy.claude-code-theme
-  ```
-- **Open VSX Registry:** [Claude Code Theme on Open VSX](https://open-vsx.org/extension/ashwingopalsamy/claude-code-theme)
-
-</details>
-
-<details>
-<summary><strong>VS Code CLI</strong></summary>
-
-```bash
-code --install-extension ashwingopalsamy.claude-code-theme
-```
-
-</details>
-
-## Dev Loop
-
-```bash
-pnpm install --frozen-lockfile
-pnpm check
-pnpm package
-```
-
-## Design Notes
-
-Brand token normalization lives in `docs/brand-tokens.md`.[^brand]
-
-[^brand]: References include Anthropic brand-guidelines skill text and the Anthropic identity case study (`docs/brand-tokens.md` has source links).
-
-> [!IMPORTANT]
-> This project is independent and is not affiliated with Anthropic.
-
-## Project Info
-
-- Maintainer: [Ashwin Gopalsamy](https://linkedin.com/in/ashwingopalsamy)
-- Repository: [ashwingopalsamy/claude-code-theme](https://github.com/ashwingopalsamy/claude-code-theme)
-- Marketplace: [Claude Code Theme](https://marketplace.visualstudio.com/items?itemName=ashwingopalsamy.claude-code-theme)
-- Open VSX: [Claude Code Theme](https://open-vsx.org/extension/ashwingopalsamy/claude-code-theme)
-- Contributing: `CONTRIBUTING.md`
-- Security: `SECURITY.md`
-- Support: `SUPPORT.md`
-- License: `MIT`
+<sub>not affiliated with Anthropic · [MIT](./LICENSE) · [changelog](./CHANGELOG.md) · [contributing](./CONTRIBUTING.md)</sub>
