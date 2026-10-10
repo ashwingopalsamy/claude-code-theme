@@ -8,10 +8,8 @@ node_modules/**
 tsconfig.json
 build.ts
 pnpm-lock.yaml
-assets/screenshot-*.svg
+assets/**
 *.vsix
-README copy.md
-CHANGELOG.md
 CONTRIBUTING.md
 SECURITY.md
 SUPPORT.md

@@ -7,14 +7,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const root = join(__dirname, '..');
 
-const themeFiles = {
-  dark: 'claude-code-dark.json',
-  'dark-high-contrast': 'claude-code-dark-high-contrast.json',
-  'dark-brand': 'claude-code-dark-brand.json',
-  light: 'claude-code-light.json',
-  'light-high-contrast': 'claude-code-light-high-contrast.json',
-  'light-brand': 'claude-code-light-brand.json',
-};
+const themeFiles = Object.fromEntries(
+  JSON.parse(readFileSync(join(root, 'package.json'), 'utf8')).contributes.themes.map((theme) => [
+    theme.path.replace(/^\.\/themes\/claude-code-/, '').replace(/\.json$/, ''),
+    theme.path.replace(/^\.\/themes\//, ''),
+  ])
+);
 
 const requiredWorkbenchKeys = [
   'contrastBorder',
@@ -234,8 +232,8 @@ for (const [variant, file] of Object.entries(themeFiles)) {
   const ansiWhite = colors['terminal.ansiWhite'];
   const ansiBrightWhite = colors['terminal.ansiBrightWhite'];
   const ansiBrightBlack = colors['terminal.ansiBrightBlack'];
-  const minimumWhiteContrast = variant.startsWith('light') ? 4.5 : 7;
-  const minimumBrightWhiteContrast = variant.startsWith('light') ? 7 : 10;
+  const minimumWhiteContrast = theme.type === 'light' ? 4.5 : 7;
+  const minimumBrightWhiteContrast = theme.type === 'light' ? 7 : 10;
 
   assert.ok(
     contrastRatio(ansiWhite, terminalBackground) >= minimumWhiteContrast,

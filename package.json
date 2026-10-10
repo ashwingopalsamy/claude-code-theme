@@ -1,8 +1,8 @@
 {
   "name": "claude-code-theme",
   "displayName": "Claude Code Theme",
-  "description": "Claude-aligned code theme system for VS Code, designed for clarity, endurance, and semantic meaning.",
-  "version": "1.2.2",
+  "description": "Warm, calm Claude-inspired themes. 10 flavors (dark, light, OLED midnight, dusk, mono, brand, high contrast), each with a no-bold twin.",
+  "version": "1.3.0",
   "publisher": "ashwingopalsamy",
   "author": {
     "name": "Ashwin Gopalsamy",
@@ -27,7 +27,16 @@
     "dark-theme",
     "syntax-highlighting",
     "accessibility",
-    "developer-ergonomics"
+    "developer-ergonomics",
+    "cursor",
+    "windsurf",
+    "oled",
+    "warm",
+    "orange",
+    "minimal",
+    "monochrome",
+    "no-bold",
+    "high-contrast"
   ],
   "icon": "logo.png",
   "galleryBanner": {
@@ -74,6 +83,26 @@
         "path": "./themes/claude-code-light-brand.json"
       },
       {
+        "label": "Claude Code Midnight",
+        "uiTheme": "vs-dark",
+        "path": "./themes/claude-code-midnight.json"
+      },
+      {
+        "label": "Claude Code Dusk",
+        "uiTheme": "vs-dark",
+        "path": "./themes/claude-code-dusk.json"
+      },
+      {
+        "label": "Claude Code Mono Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/claude-code-mono-dark.json"
+      },
+      {
+        "label": "Claude Code Mono Light",
+        "uiTheme": "vs",
+        "path": "./themes/claude-code-mono-light.json"
+      },
+      {
         "label": "Claude Code Dark (No Bold)",
         "uiTheme": "vs-dark",
         "path": "./themes/claude-code-dark-no-bold.json"
@@ -102,6 +131,26 @@
         "label": "Claude Code Light Brand (No Bold)",
         "uiTheme": "vs",
         "path": "./themes/claude-code-light-brand-no-bold.json"
+      },
+      {
+        "label": "Claude Code Midnight (No Bold)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/claude-code-midnight-no-bold.json"
+      },
+      {
+        "label": "Claude Code Dusk (No Bold)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/claude-code-dusk-no-bold.json"
+      },
+      {
+        "label": "Claude Code Mono Dark (No Bold)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/claude-code-mono-dark-no-bold.json"
+      },
+      {
+        "label": "Claude Code Mono Light (No Bold)",
+        "uiTheme": "vs",
+        "path": "./themes/claude-code-mono-light-no-bold.json"
       }
     ]
   },
@@ -109,6 +158,7 @@
     "build": "tsx build.ts",
     "check": "pnpm build && pnpm compile && pnpm contrast && pnpm test:theme",
     "contrast": "tsx scripts/contrast-report.ts",
+    "shots": "tsx scripts/shots/render.ts",
     "test:theme": "node test/theme-quality.test.mjs",
     "package": "vsce package",
     "publish:marketplace": "vsce publish",
@@ -116,10 +166,15 @@
     "compile": "tsc --noEmit"
   },
   "devDependencies": {
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
     "@types/node": "^20.0.0",
     "@types/vscode": "^1.80.0",
     "@vscode/vsce": "^2.22.0",
     "ovsx": "^0.9.3",
+    "playwright": "^1.64.0",
+    "sharp": "^0.35.5",
+    "shiki": "^4.5.0",
     "tsx": "^4.6.0",
     "typescript": "^5.3.0"
   }

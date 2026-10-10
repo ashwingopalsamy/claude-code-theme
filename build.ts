@@ -1,79 +1,28 @@
 #!/usr/bin/env tsx
 
-import { mkdir, writeFile } from 'fs/promises';
+import { mkdir, readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { compileTheme, defaultOptions } from './src/theme';
-import type { ThemeVariant } from './src/theme/palette';
-import type { ThemeOptions } from './src/types';
+import type { Flavor } from './src/theme/palette';
 
-interface BuildTarget {
-  variant: ThemeVariant;
-  options: ThemeOptions;
-  filename: string;
-}
+type UiTheme = 'vs' | 'vs-dark' | 'hc-black' | 'hc-light';
 
-const targets: BuildTarget[] = [
-  {
-    variant: 'dark',
-    options: defaultOptions,
-    filename: 'claude-code-dark.json',
-  },
-  {
-    variant: 'dark-high-contrast',
-    options: defaultOptions,
-    filename: 'claude-code-dark-high-contrast.json',
-  },
-  {
-    variant: 'dark-brand',
-    options: defaultOptions,
-    filename: 'claude-code-dark-brand.json',
-  },
-  {
-    variant: 'light',
-    options: defaultOptions,
-    filename: 'claude-code-light.json',
-  },
-  {
-    variant: 'light-high-contrast',
-    options: defaultOptions,
-    filename: 'claude-code-light-high-contrast.json',
-  },
-  {
-    variant: 'light-brand',
-    options: defaultOptions,
-    filename: 'claude-code-light-brand.json',
-  },
-  // No-bold variants
-  {
-    variant: 'dark-no-bold',
-    options: { ...defaultOptions, emphasizeDeclarations: false },
-    filename: 'claude-code-dark-no-bold.json',
-  },
-  {
-    variant: 'dark-high-contrast-no-bold',
-    options: { ...defaultOptions, emphasizeDeclarations: false },
-    filename: 'claude-code-dark-high-contrast-no-bold.json',
-  },
-  {
-    variant: 'dark-brand-no-bold',
-    options: { ...defaultOptions, emphasizeDeclarations: false },
-    filename: 'claude-code-dark-brand-no-bold.json',
-  },
-  {
-    variant: 'light-no-bold',
-    options: { ...defaultOptions, emphasizeDeclarations: false },
-    filename: 'claude-code-light-no-bold.json',
-  },
-  {
-    variant: 'light-high-contrast-no-bold',
-    options: { ...defaultOptions, emphasizeDeclarations: false },
-    filename: 'claude-code-light-high-contrast-no-bold.json',
-  },
-  {
-    variant: 'light-brand-no-bold',
-    options: { ...defaultOptions, emphasizeDeclarations: false },
-    filename: 'claude-code-light-brand-no-bold.json',
-  },
+const flavors: { flavor: Flavor; label: string; uiTheme: UiTheme }[] = [
+  { flavor: 'dark', label: 'Claude Code Dark', uiTheme: 'vs-dark' },
+  { flavor: 'dark-high-contrast', label: 'Claude Code Dark High Contrast', uiTheme: 'hc-black' },
+  { flavor: 'dark-brand', label: 'Claude Code Dark Brand', uiTheme: 'vs-dark' },
+  { flavor: 'light', label: 'Claude Code Light', uiTheme: 'vs' },
+  { flavor: 'light-high-contrast', label: 'Claude Code Light High Contrast', uiTheme: 'hc-light' },
+  { flavor: 'light-brand', label: 'Claude Code Light Brand', uiTheme: 'vs' },
+  { flavor: 'midnight', label: 'Claude Code Midnight', uiTheme: 'vs-dark' },
+  { flavor: 'dusk', label: 'Claude Code Dusk', uiTheme: 'vs-dark' },
+  { flavor: 'mono-dark', label: 'Claude Code Mono Dark', uiTheme: 'vs-dark' },
+  { flavor: 'mono-light', label: 'Claude Code Mono Light', uiTheme: 'vs' },
+];
+
+const weights = [
+  { suffix: '', labelSuffix: '', emphasizeDeclarations: true },
+  { suffix: '-no-bold', labelSuffix: ' (No Bold)', emphasizeDeclarations: false },
 ];
 
 async function generateThemes() {
@@ -82,13 +31,28 @@ async function generateThemes() {
 
   console.log('Generating Claude Code Theme variants...');
 
-  for (const target of targets) {
-    const theme = compileTheme(target.variant, target.options);
-    const destination = join(themesDir, target.filename);
+  const contributes: { label: string; uiTheme: UiTheme; path: string }[] = [];
 
-    await writeFile(destination, JSON.stringify(theme, null, 2));
-    console.log(`Built ${target.filename}`);
+  for (const weight of weights) {
+    for (const { flavor, label, uiTheme } of flavors) {
+      const filename = `claude-code-${flavor}${weight.suffix}.json`;
+      const themeLabel = `${label}${weight.labelSuffix}`;
+      const theme = compileTheme(
+        flavor,
+        { ...defaultOptions, emphasizeDeclarations: weight.emphasizeDeclarations },
+        themeLabel
+      );
+
+      await writeFile(join(themesDir, filename), JSON.stringify(theme, null, 2));
+      console.log(`Built ${filename}`);
+      contributes.push({ label: themeLabel, uiTheme, path: `./themes/${filename}` });
+    }
   }
+
+  const packagePath = join(process.cwd(), 'package.json');
+  const pkg = JSON.parse(await readFile(packagePath, 'utf8'));
+  pkg.contributes.themes = contributes;
+  await writeFile(packagePath, JSON.stringify(pkg, null, 2) + '\n');
 
   console.log('Theme build complete.');
 }
