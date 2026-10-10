@@ -114,7 +114,7 @@ export function getUiColors(context: ThemeContext): WorkbenchColors {
     'tab.inactiveBackground': palette.backgroundAlt,
     'tab.inactiveForeground': palette.foregroundSubtle,
     'tab.inactiveModifiedBorder': palette.git.modified,
-    'tab.border': palette.border,
+    'tab.border': transparent,
     'tab.lastPinnedBorder': palette.border,
     'tab.selectedForeground': palette.foreground,
     'tab.selectedBorderTop': palette.accent,

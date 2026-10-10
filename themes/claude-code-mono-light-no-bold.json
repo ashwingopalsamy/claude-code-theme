@@ -66,7 +66,7 @@
     "tab.inactiveBackground": "#F0EEE6",
     "tab.inactiveForeground": "#8D877D",
     "tab.inactiveModifiedBorder": "#8A6220",
-    "tab.border": "#D9D5CC",
+    "tab.border": "#00000000",
     "tab.lastPinnedBorder": "#D9D5CC",
     "tab.selectedForeground": "#1A1917",
     "tab.selectedBorderTop": "#CC785C",
