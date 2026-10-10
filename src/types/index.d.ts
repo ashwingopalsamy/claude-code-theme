@@ -1,4 +1,4 @@
-import type { ClaudePalette, AnsiColors, ThemeVariant, BrandTokens } from '../theme/palette';
+import type { ClaudePalette, AnsiColors, Flavor, BrandTokens } from '../theme/palette';
 
 export interface ThemeOptions {
   enableItalics: boolean;
@@ -8,7 +8,7 @@ export interface ThemeOptions {
 }
 
 export interface ThemeContext {
-  variant: ThemeVariant;
+  flavor: Flavor;
   palette: ClaudePalette;
   ansiColors: { normal: AnsiColors; bright: AnsiColors };
   brandTokens: BrandTokens;

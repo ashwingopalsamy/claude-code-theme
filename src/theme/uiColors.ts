@@ -2,10 +2,10 @@ import type { WorkbenchColors, ThemeContext } from '../types';
 import { opacity, transparent } from './utilities';
 
 export function getUiColors(context: ThemeContext): WorkbenchColors {
-  const { palette, ansiColors, variant } = context;
+  const { palette, ansiColors } = context;
   const isDark = palette.type === 'dark';
-  const isHighContrast = variant.includes('high-contrast');
-  const isBrandVariant = variant.endsWith('brand');
+  const isHighContrast = palette.highContrast;
+  const isBrandVariant = palette.chrome === 'brand';
   const selectionAlpha = isDark ? 0.26 : 0.18;
   const softSelectionAlpha = isDark ? 0.16 : 0.1;
   const lineAlpha = isDark ? 0.12 : 0.08;

@@ -1,5 +1,5 @@
 import { compileTheme } from '../src/theme';
-import { ansiPalettes, palettes, type ThemeVariant } from '../src/theme/palette';
+import { ansiPalettes, palettes, type Flavor } from '../src/theme/palette';
 
 interface ContrastCheck {
   label: string;
@@ -133,10 +133,10 @@ function hueDistance(first: string, second: string): number {
   return Math.min(difference, 360 - difference);
 }
 
-function reportVariant(variant: ThemeVariant): { failed: boolean; lines: string[] } {
-  const palette = palettes[variant];
-  const ansi = ansiPalettes[variant];
-  const compiled = compileTheme(variant);
+function reportFlavor(flavor: Flavor): { failed: boolean; lines: string[] } {
+  const palette = palettes[flavor];
+  const ansi = ansiPalettes[flavor];
+  const compiled = compileTheme(flavor);
   const colors = compiled.colors;
   const isLight = palette.type === 'light';
 
@@ -287,7 +287,7 @@ function reportVariant(variant: ThemeVariant): { failed: boolean; lines: string[
     },
   ];
 
-  const lines = [`${variant}`];
+  const lines = [`${flavor}`];
   let failed = false;
 
   for (const check of contrastChecks) {
@@ -316,8 +316,8 @@ function reportVariant(variant: ThemeVariant): { failed: boolean; lines: string[
 
 let hasFailure = false;
 
-for (const variant of Object.keys(palettes) as ThemeVariant[]) {
-  const report = reportVariant(variant);
+for (const flavor of Object.keys(palettes) as Flavor[]) {
+  const report = reportFlavor(flavor);
   if (report.failed) {
     hasFailure = true;
   }

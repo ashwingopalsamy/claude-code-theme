@@ -144,8 +144,10 @@ export interface SyntaxTokens {
 }
 
 export interface ClaudePalette {
-  variant: ThemeVariant;
+  flavor: Flavor;
   type: 'light' | 'dark';
+  chrome: 'neutral' | 'brand';
+  highContrast: boolean;
   brand: BrandTokens;
   background: string;
   backgroundAlt: string;
@@ -184,23 +186,19 @@ export interface AnsiColors {
   white: string;
 }
 
-export type ThemeVariant =
+export type Flavor =
   | 'dark'
   | 'dark-high-contrast'
   | 'dark-brand'
   | 'light'
   | 'light-high-contrast'
-  | 'light-brand'
-  | 'dark-no-bold'
-  | 'dark-high-contrast-no-bold'
-  | 'dark-brand-no-bold'
-  | 'light-no-bold'
-  | 'light-high-contrast-no-bold'
-  | 'light-brand-no-bold';
+  | 'light-brand';
 
 const darkPalette: ClaudePalette = {
-  variant: 'dark',
+  flavor: 'dark',
   type: 'dark',
+  chrome: 'neutral',
+  highContrast: false,
   brand: brandTokens,
   background: brandTokens.background.dark,
   backgroundAlt: brandTokens.background.darkRaised,
@@ -247,8 +245,10 @@ const darkPalette: ClaudePalette = {
 };
 
 const darkHighContrastPalette: ClaudePalette = {
-  variant: 'dark-high-contrast',
+  flavor: 'dark-high-contrast',
   type: 'dark',
+  chrome: 'neutral',
+  highContrast: true,
   brand: brandTokens,
   background: '#11100F',
   backgroundAlt: '#161513',
@@ -295,8 +295,10 @@ const darkHighContrastPalette: ClaudePalette = {
 };
 
 const lightPalette: ClaudePalette = {
-  variant: 'light',
+  flavor: 'light',
   type: 'light',
+  chrome: 'neutral',
+  highContrast: false,
   brand: brandTokens,
   background: brandTokens.background.light,
   backgroundAlt: brandTokens.background.lightRaised,
@@ -343,8 +345,10 @@ const lightPalette: ClaudePalette = {
 };
 
 const lightHighContrastPalette: ClaudePalette = {
-  variant: 'light-high-contrast',
+  flavor: 'light-high-contrast',
   type: 'light',
+  chrome: 'neutral',
+  highContrast: true,
   brand: brandTokens,
   background: '#F6F3EA',
   backgroundAlt: '#EBE7DC',
@@ -392,14 +396,16 @@ const lightHighContrastPalette: ClaudePalette = {
 
 const darkBrandPalette: ClaudePalette = {
   ...darkPalette,
-  variant: 'dark-brand',
+  flavor: 'dark-brand',
+  chrome: 'brand',
   accent: brandTokens.primary,
   accentHover: '#BF5A39',
 };
 
 const lightBrandPalette: ClaudePalette = {
   ...lightPalette,
-  variant: 'light-brand',
+  flavor: 'light-brand',
+  chrome: 'brand',
   accent: brandTokens.primary,
   accentHover: '#BF5A39',
 };
@@ -496,32 +502,20 @@ const lightHighContrastAnsi: { normal: AnsiColors; bright: AnsiColors } = {
   },
 };
 
-export const palettes: Record<ThemeVariant, ClaudePalette> = {
+export const palettes: Record<Flavor, ClaudePalette> = {
   dark: darkPalette,
   'dark-high-contrast': darkHighContrastPalette,
   'dark-brand': darkBrandPalette,
   light: lightPalette,
   'light-high-contrast': lightHighContrastPalette,
   'light-brand': lightBrandPalette,
-  'dark-no-bold': darkPalette,
-  'dark-high-contrast-no-bold': darkHighContrastPalette,
-  'dark-brand-no-bold': darkBrandPalette,
-  'light-no-bold': lightPalette,
-  'light-high-contrast-no-bold': lightHighContrastPalette,
-  'light-brand-no-bold': lightBrandPalette,
 };
 
-export const ansiPalettes: Record<ThemeVariant, { normal: AnsiColors; bright: AnsiColors }> = {
+export const ansiPalettes: Record<Flavor, { normal: AnsiColors; bright: AnsiColors }> = {
   dark: darkAnsi,
   'dark-high-contrast': darkHighContrastAnsi,
   'dark-brand': darkAnsi,
   light: lightAnsi,
   'light-high-contrast': lightHighContrastAnsi,
   'light-brand': lightAnsi,
-  'dark-no-bold': darkAnsi,
-  'dark-high-contrast-no-bold': darkHighContrastAnsi,
-  'dark-brand-no-bold': darkAnsi,
-  'light-no-bold': lightAnsi,
-  'light-high-contrast-no-bold': lightHighContrastAnsi,
-  'light-brand-no-bold': lightAnsi,
 };
